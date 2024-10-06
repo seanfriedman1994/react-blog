@@ -1,18 +1,19 @@
-import { useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
+
 
 const BlogDetails = () => {
   const {id} = useParams();
 
   const {data, error, isPending} = useFetch(`http://localhost:8000/blogs/${id}`);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleDelete = () => {
     fetch('http://localhost:8000/blogs/' + data.id, {
       method: 'DELETE',
     }).then(() => {
-      history.push('/');
+      navigate('/');
     });
   }
 

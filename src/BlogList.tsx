@@ -1,8 +1,19 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 
-const BlogList = ({blogs, title}) => {
-  // const blogs = props.blogs;
-  // const title = props.title;
+type BlogListProps = {
+  blogs: [
+    Blog
+  ],
+  title: string
+}
+
+type Blog = {
+  id: number,
+  title: string,
+  author: string
+};
+
+const BlogList = ({ blogs, title }: BlogListProps) => {
 
 
   return ( 

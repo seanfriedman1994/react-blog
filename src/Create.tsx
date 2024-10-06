@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Mario');
     const [isPending, setIsPending] = useState(false);
-    const history = useHistory();
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const blog = {
             title, body, author
@@ -23,7 +23,7 @@ const Create = () => {
         }).then(() => {
             setIsPending(false);
             //history.go(-1); - go back 1 page
-            history.push('/');
+            navigate('/');
         });
 
         
