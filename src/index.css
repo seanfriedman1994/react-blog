@@ -80,7 +80,7 @@
   display: block;
 }
 
-.create h2 {
+.create h2, .blog-details h2 {
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 30px;
@@ -95,11 +95,15 @@
   display: block;
 }
 
-.create button {
+.create button, .blog-details button{
   background: #f1356d;
   color: #fff;
   border: 1px solid #f1356d;
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.blog-details p {
+  margin-bottom: 20px;
 }
