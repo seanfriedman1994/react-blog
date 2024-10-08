@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Blog } from "./lib/types";
 
 type BlogListProps = {
   blogs: [
@@ -6,12 +7,6 @@ type BlogListProps = {
   ],
   title: string
 }
-
-type Blog = {
-  id: number,
-  title: string,
-  author: string
-};
 
 const BlogList = ({ blogs, title }: BlogListProps) => {
 
